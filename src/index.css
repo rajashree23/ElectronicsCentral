@@ -24,15 +24,3 @@
   --border-lg: 30px;
   --border-xl: 999px;
 }
-
-button {
-  border: none;
-  color: var(--primary-color);
-  border-radius: var(--border-sm);
-  font-weight: var(--semi-bold);
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--hover-color);
-}

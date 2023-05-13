@@ -1,3 +1,80 @@
-.nav-container{
+.nav-container {
     display: none;
+}
+
+.mobile-nav-container {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.mobile-nav-container .image-container {
+    margin-left: -5rem;
+}
+
+.mobile-nav-container .hamburger {
+    align-self: center;
+    cursor: pointer;
+}
+
+.mobile-nav-container .hamburger p {
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.mobile-nav-container .bar {
+    display: block;
+    background-color: var(--secondary-color);
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+}
+
+.none {
+    display: none;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 25vw;
+    margin: 4rem auto;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.nav-items .row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+}
+.nav-items .row:hover{
+    background-color: var(--hover-color);
+    background-color: var(--hover-color);
+    border-radius: var(--border-xs);
+}
+
+.nav-items .link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+.cross{
+    color:var(--secondary-color)
 }
