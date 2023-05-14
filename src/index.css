@@ -23,4 +23,8 @@
   --border-md: 20px;
   --border-lg: 30px;
   --border-xl: 999px;
+
+  --p-desktop: 1.25rem;
+  --p-tab: 1.125rem;
+  --p-mobile: 1rem;
 }
