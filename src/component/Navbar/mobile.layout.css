@@ -2,6 +2,7 @@
     display: none;
 }
 
+/* mobile-nav-container */
 .mobile-nav-container {
     background-color: var(--primary-color);
     display: flex;
@@ -9,22 +10,28 @@
     padding: 0 1rem;
 }
 
-.mobile-nav-container .image-container {
+/* image container */
+.image-container {
     margin-left: -5rem;
 }
 
-.mobile-nav-container .hamburger {
+/* hamburger menu */
+.hamburger {
     align-self: center;
     cursor: pointer;
 }
 
-.mobile-nav-container .hamburger p {
+/* hamburger menu when toggled to cross */
+.hamburger .cross {
     color: var(--secondary-color);
-    cursor: pointer;
-    font-size: 1.5rem;
 }
 
-.mobile-nav-container .bar {
+.hamburger .cross:hover {
+    color: var(--hover-color);
+}
+
+/* hamburger dashes */
+.hamburger .bar {
     display: block;
     background-color: var(--secondary-color);
     width: 25px;
@@ -32,11 +39,13 @@
     margin: 5px auto;
 }
 
+/* for display none */
 .none {
     display: none;
 }
 
-.nav-items {
+/* nav items when hamburger selected container */
+.nav-items-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -47,34 +56,32 @@
     left: 0;
 }
 
-.nav-items .row {
+/* nav items */
+.nav-items-container .nav-items {
     display: flex;
     gap: 1rem;
     align-items: center;
     font-size: 1.25rem;
     cursor: pointer;
-    align-self: flex-start;
     padding: 0.5rem 1rem;
 }
-.nav-items .row:hover{
+
+/* nav items on hover */
+.nav-items-container .nav-items:hover {
     background-color: var(--hover-color);
     background-color: var(--hover-color);
     border-radius: var(--border-xs);
 }
 
-.nav-items .link {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
+/* nav items icons */
 .icon {
     color: var(--primary-color);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-
-
-.cross{
-    color:var(--secondary-color)
+/* nav items link*/
+.link {
+    text-decoration: none;
+    color: var(--primary-color);
 }

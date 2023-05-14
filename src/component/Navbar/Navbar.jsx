@@ -5,7 +5,7 @@ import {
   faShoppingCart,
   faHeart,
   faUser,
-  faXmark
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,13 @@ export const Navbar = () => {
           <input placeholder="Search" />
         </div>
 
-        <div className="action-items">
-          <FontAwesomeIcon icon={faShoppingCart} className="icon" />
-          <FontAwesomeIcon icon={faHeart} className="icon" />
+        <div className="action-container">
+          <Link to="/cart">
+            <FontAwesomeIcon icon={faShoppingCart} className="icon" />
+          </Link>
+          <Link to="/wishlist">
+            <FontAwesomeIcon icon={faHeart} className="icon" />
+          </Link>
           <Link to="/login" className="link">
             Login
           </Link>
@@ -51,7 +55,7 @@ export const Navbar = () => {
           onClick={() => setHamburgerSelected((prev) => !prev)}
         >
           {hamburgerSelected ? (
-              <FontAwesomeIcon icon={faXmark} className="icon cross" />
+            <FontAwesomeIcon icon={faXmark} className="icon cross" />
           ) : (
             <>
               <span className="bar"></span>
@@ -62,23 +66,35 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`${hamburgerSelected ?"nav-items":"none" }`}>
-        <div className="row"   onClick={() => setHamburgerSelected((prev) => !prev)}>
-          <FontAwesomeIcon icon={faShoppingCart} className="icon " />
-          <p>Cart</p>
-        </div>
+      <div className={`${hamburgerSelected ? "nav-items-container" : "none"}`}>
+        <Link to="/cart" className="link">
+          <div
+            className="nav-items"
+            onClick={() => setHamburgerSelected((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={faShoppingCart} className="icon " />
+            <p>Cart</p>
+          </div>
+        </Link>
 
-        <div className="row"   onClick={() => setHamburgerSelected((prev) => !prev)}>
-          <FontAwesomeIcon icon={faHeart} className="icon" />
-          <p>Wishlist</p>
-        </div>
-
-        <div className="row"   onClick={() => setHamburgerSelected((prev) => !prev)}>
-          <FontAwesomeIcon icon={faUser} className="icon" />
-          <Link to="/login" className="link">
+        <Link to="/wishlist" className="link">
+          <div
+            className="nav-items"
+            onClick={() => setHamburgerSelected((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={faHeart} className="icon" />
+            <p>Wishlist</p>
+          </div>
+        </Link>
+        <Link to="/login" className="link">
+          <div
+            className="nav-items"
+            onClick={() => setHamburgerSelected((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={faUser} className="icon" />
             Login
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </>
   );
