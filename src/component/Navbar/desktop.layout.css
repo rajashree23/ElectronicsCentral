@@ -1,49 +1,74 @@
 @media (min-width: 768px) {
-    .nav-container {
-        background-color: var(--primary-color);
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1rem;
-    }
+  .mobile-nav-container {
+    display: none;
+  }
 
-    .input-container {
-        align-self: center;
-        padding: 0.5rem;
-        width: 40vw;
-        border-radius: var(--border-lg);
-        background-color: var(--secondary-color);
-        display: flex;
-    }
+  .nav-items-container {
+    display: none;
+  }
 
-    .search-icon {
-        margin-right: 1rem;
-    }
+  /* main container */
+  .nav-container {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
 
-    .input-container input {
-        outline: none;
-        border: none;
-        width: 100%;
-        color: var(--primary-color)
-    }
+  /* input container */
+  .input-container {
+    align-self: center;
+    padding: 0.5rem;
+    width: 40vw;
+    border-radius: var(--border-lg);
+    background-color: var(--secondary-color);
+    display: flex;
+  }
 
-    .action-items {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-        padding: 0 3rem;
-    }
+  /* input container search icon */
+  .input-container .search-icon {
+    margin-right: 1rem;
+  }
 
-    .action-items button {
-        padding: 0.5rem 2rem;
-    }
+  /* input container input */
+  .input-container input {
+    outline: none;
+    border: none;
+    width: 100%;
+    color: var(--primary-color);
+  }
 
-    .icon {
-        color: var(--secondary-color);
-        font-size: 1.5rem;
-    }
+  /* action container */
+  .action-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 3rem;
+  }
 
-    .icon:hover {
-        cursor: pointer;
-        color: var(--hover-color);
-    }
+  /* action container icons*/
+  .action-container .icon {
+    color: var(--secondary-color);
+  }
+
+  /* action container icons on hover*/
+  .action-container .icon:hover {
+    color: var(--hover-color);
+  }
+
+  /* action container links*/
+  .link {
+    border: none;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-sm);
+    font-weight: var(--semi-bold);
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* action container links on hover*/
+  .link:hover {
+    background-color: var(--hover-color);
+  }
 }
