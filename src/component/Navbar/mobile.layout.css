@@ -8,6 +8,11 @@
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
+    position: sticky;
+    left: 0;
+    right: 0;
+    top:0;
+    z-index: 10;
 }
 
 /* image container */
@@ -46,14 +51,15 @@
 
 /* nav items when hamburger selected container */
 .nav-items-container {
+    z-index: 1;
+    background: var(--secondary-color);
     display: flex;
     flex-direction: column;
+    grid-gap: 2rem;
     gap: 2rem;
-    width: 25vw;
-    margin: 4rem auto;
+    width: 50vw;
     position: fixed;
     right: 0;
-    left: 0;
 }
 
 /* nav items */
