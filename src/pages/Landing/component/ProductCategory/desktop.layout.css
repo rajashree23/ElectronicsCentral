@@ -1,0 +1,13 @@
+@media(min-width:768px) {
+
+    /* product category */
+    .product-category {
+        width: 21vw;
+        height: 21vw;
+    }
+
+    /* product category p */
+    .product-category p {
+        font-size: var(--p-desktop);
+    }
+}

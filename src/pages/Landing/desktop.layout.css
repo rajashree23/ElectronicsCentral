@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+
+  /* hero description */
+  .hero-container .description {
+    top: 9rem;
+    left: 11rem;
+  }
+
+  /* hero description button */
+  .hero-container .description button {
+    font-size: var(--p-desktop);
+  }
+
+  /* hero description h1 */
+  .hero-container .description h1 {
+    font-size: var(--h1-desktop);
+  }
+
+  /* categories container h1 */
+  .categories-container h1 {
+    font-size: var(--h1-desktop);
+  }
+
+  /* category */
+  .categories-container .category {
+    flex-direction: row;
+  }
+}

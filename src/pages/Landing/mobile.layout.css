@@ -1,0 +1,82 @@
+/* hero */
+.hero-container {
+  position: relative;
+}
+
+/* hero bg */
+.hero-container .hero-image-container {
+  background-image: url("../../assets/HeroImage.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 86vh;
+}
+
+/* hero description */
+.hero-container .description {
+  position: absolute;
+  top: 16rem;
+  left: 2rem;
+  z-index: 1
+}
+
+/* hero description span */
+.hero-container .description span {
+  display: block;
+}
+
+/* hero description h1 */
+.hero-container .description h1 {
+  color: var(--secondary-color);
+  font-size: var(--h1-mobile);
+}
+
+/* hero description button */
+.hero-container .description button {
+  border: none;
+  border-radius: var(--border-sm);
+  padding: 0.5rem 1rem;
+  font-size: var(--p-mobile);
+  font-weight: var(--semi-bold);
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: black;
+  color: var(--secondary-color);
+}
+
+/* hero description button on hover */
+.hero-container .description button:hover {
+  background-color: var(--hover-color);
+  color: black
+}
+
+/* hero overlay */
+.overlay {
+  background: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 86vh
+}
+
+/* categories */
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+}
+
+/* categories container h1 */
+.categories-container h1 {
+  font-size: var(--h1-mobile);
+}
+
+/* category */
+.categories-container .category {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+}
