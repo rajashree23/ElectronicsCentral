@@ -7,6 +7,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 :root {
   --primary-color: #151515;
   --secondary-color: #FFFFFF;
@@ -22,9 +27,18 @@
   --border-sm: 10px;
   --border-md: 20px;
   --border-lg: 30px;
-  --border-xl: 999px;
+  --border-xl: 50%;
 
   --p-desktop: 1.25rem;
   --p-tab: 1.125rem;
   --p-mobile: 1rem;
+  
+  --h1-desktop: 3rem;
+  --h1-tab: 2.5rem;
+  --h1-mobile: 2rem;
+
+  --h2-desktop: 2rem;
+  --h2-tab: 1.75rem;
+  --h2-mobile: 1.5rem;
+
 }
