@@ -1,0 +1,30 @@
+@media(min-width:768px) {
+
+    /* product main layout */
+    .product-container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    .product-card-container {
+        flex-direction: row;
+    }
+
+
+    /* Product detail card */
+    .product-detail-card {
+        width: 50vw;
+        flex-direction: row;
+    }
+
+    .product-detail-card .product-name {
+        font-size: var(--h2-mobile);
+
+    }
+
+    .product-detail-card .description{
+        font-size: var(--p-desktop);
+    }
+    
+
+}
