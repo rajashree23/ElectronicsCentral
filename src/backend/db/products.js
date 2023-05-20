@@ -1,5 +1,4 @@
 import { v4 as uuid } from "uuid";
-
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -8,6 +7,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/91WgL3IbNIL._SL1500_.jpg",
     categoryName: "Laptop",
     price: 79999,
     originalPrice: 89999,
@@ -19,6 +19,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/71G7uuFWR-L._SL1500_.jpg",
     categoryName: "Laptop",
     price: 64999,
     originalPrice: 69999,
@@ -30,6 +31,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/71k3N4gxNeL._SX450_.jpg",
     categoryName: "Laptop",
     price: 52999,
     originalPrice: 59999,
@@ -37,10 +39,11 @@ export const products = [
     productDescription:
       "The Lenovo ThinkPad X1 Carbon is a lightweight and durable laptop with a great keyboard.",
     inStock: true,
-    averageRating: 4.4,
+    averageRating: 3.4,
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/819sH4bXkGL._SX450_.jpg",
     categoryName: "Laptop",
     price: 71999,
     originalPrice: 79999,
@@ -48,10 +51,12 @@ export const products = [
     productDescription:
       "The ASUS ROG Zephyrus G14 is a high-performance gaming laptop with a compact form factor.",
     inStock: true,
-    averageRating: 4.7,
+    averageRating: 3.9,
   },
   {
     _id: uuid(),
+    imgSrc:
+      "https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UF1000,1000_QL80_.jpg",
     categoryName: "Laptop",
     price: 99999,
     originalPrice: 109999,
@@ -63,6 +68,8 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc:
+      "https://images-na.ssl-images-amazon.com/images/I/61IJBsHm97L._AC_UL600_SR600,600_.jpg",
     categoryName: "Smartphone",
     price: 69999,
     originalPrice: 74999,
@@ -74,6 +81,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/71ee+5V4ZRL._SL1500_.jpg",
     categoryName: "Smartphone",
     price: 54999,
     originalPrice: 59999,
@@ -85,6 +93,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/81EkB+rbZkL._SX522_.jpg",
     categoryName: "Smartphone",
     price: 47999,
     originalPrice: 52999,
@@ -96,6 +105,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/614cCf6bzyL._SX679_.jpg",
     categoryName: "Smartphone",
     price: 39999,
     originalPrice: 44999,
@@ -103,10 +113,11 @@ export const products = [
     productDescription:
       "The OnePlus 9 Pro offers a smooth and fast user experience with its high-refresh-rate display and powerful performance.",
     inStock: true,
-    averageRating: 4.6,
+    averageRating: 2.5,
   },
   {
     _id: uuid(),
+    imgSrc: "https://m.media-amazon.com/images/I/51OBzQgvqDL.jpg",
     categoryName: "Smartphone",
     price: 32999,
     originalPrice: 37999,
@@ -114,10 +125,11 @@ export const products = [
     productDescription:
       "The Xiaomi Mi 11 Ultra boasts a powerful camera system and a large OLED display.",
     inStock: true,
-    averageRating: 4.5,
+    averageRating: 2.8,
   },
   {
     _id: uuid(),
+    imgSrc:"https://m.media-amazon.com/images/I/61ni3t1ryQL._AC_SS450_.jpg",
     categoryName: "Computer Accessory",
     price: 999,
     originalPrice: 1299,
@@ -125,10 +137,11 @@ export const products = [
     productDescription:
       "The Logitech MX Master 3 is an ergonomic wireless mouse with customizable buttons and precise tracking.",
     inStock: true,
-    averageRating: 4.7,
+    averageRating: 1.5,
   },
   {
     _id: uuid(),
+    imgSrc:"https://m.media-amazon.com/images/I/616AvEx3S0S._SL1369_.jpg",
     categoryName: "Computer Accessory",
     price: 2499,
     originalPrice: 2999,
@@ -140,6 +153,7 @@ export const products = [
   },
   {
     _id: uuid(),
+    imgSrc:"https://m.media-amazon.com/images/I/31naAKlnBZL._AC_.jpg",
     categoryName: "Computer Accessory",
     price: 1999,
     originalPrice: 2299,
@@ -147,24 +161,26 @@ export const products = [
     productDescription:
       "The Samsung 970 EVO Plus is a high-performance NVMe SSD with fast read and write speeds.",
     inStock: true,
-    averageRating: 4.8,
+    averageRating: 3.5,
   },
   {
     _id: uuid(),
+    imgSrc:"https://m.media-amazon.com/images/I/71+ZD+DmiyL._SL1500_.jpg",
     categoryName: "Computer Accessory",
-    price: 699,
-    originalPrice: 899,
+    price: 3699,
+    originalPrice: 4899,
     productName: "JBL Quantum 200 Gaming Headset",
     productDescription:
       "The JBL Quantum 200 is a comfortable gaming headset with immersive sound and a detachable microphone.",
     inStock: true,
-    averageRating: 4.3,
+    averageRating: 2.5,
   },
   {
     _id: uuid(),
+    imgSrc:"https://m.media-amazon.com/images/I/81vrHBdJyDL._SL1500_.jpg",
     categoryName: "Computer Accessory",
-    price: 1499,
-    originalPrice: 1799,
+    price: 5999,
+    originalPrice: 7799,
     productName: "Seagate Backup Plus 5TB External Hard Drive",
     productDescription:
       "The Seagate Backup Plus is a reliable external hard drive with ample storage capacity for your files and backups.",

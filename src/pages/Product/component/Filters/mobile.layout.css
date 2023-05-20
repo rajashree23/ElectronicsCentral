@@ -1,0 +1,41 @@
+/* filters main container */
+.filter-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
+  gap: 1rem;
+  border-right: 2px solid var(--primary-color);
+}
+
+.filter-container .filter-title {
+    font-weight: var(--semi-bold);
+    font-size: 1.125rem;
+}
+
+.clear {
+  cursor: pointer;
+}
+
+.filter-container .heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #151515;
+}
+
+.slider-value-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}

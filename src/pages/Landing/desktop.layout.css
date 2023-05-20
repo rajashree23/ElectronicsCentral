@@ -7,7 +7,7 @@
   }
 
   /* hero description button */
-  .hero-container .description button {
+  .hero-container .description .link {
     font-size: var(--p-desktop);
   }
 

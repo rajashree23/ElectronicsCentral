@@ -31,20 +31,22 @@
 }
 
 /* hero description button */
-.hero-container .description button {
+.hero-container .description .link {
+  text-decoration: none;
   border: none;
   border-radius: var(--border-sm);
   padding: 0.5rem 1rem;
   font-size: var(--p-mobile);
   font-weight: var(--semi-bold);
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 3rem;
   background-color: black;
   color: var(--secondary-color);
+  display: inline-block;
 }
 
 /* hero description button on hover */
-.hero-container .description button:hover {
+.hero-container .description .link:hover {
   background-color: var(--hover-color);
   color: black
 }

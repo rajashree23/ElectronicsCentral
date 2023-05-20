@@ -10,12 +10,10 @@ import { DataContextProvider } from "./context/data/DataContext";
 makeServer();
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <DataContextProvider>
         <App />
       </DataContextProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
