@@ -7,15 +7,29 @@ import {
   faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useDataContext } from "../../context/data/DataContext";
+
+import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 
 import Logo from "../../assets/Logo.svg";
+
 import "./mobile.layout.css";
 import "./desktop.layout.css";
 
 export const Navbar = () => {
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
+  const { filters, dataDispatch } = useDataContext();
+  const navigate = useNavigate();
 
+  const inputHandler = (e) => {
+    dataDispatch({
+      type: ACTION_TYPES.INPUT_SEARCH,
+      payload: e.target.value,
+    });
+    navigate("/products");
+  };
   return (
     <>
       <nav className="nav-container">
@@ -27,7 +41,11 @@ export const Navbar = () => {
 
         <div className="input-container">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          <input placeholder="Search" />
+          <input
+            value={filters.inputSearch}
+            placeholder="Search"
+            onChange={inputHandler}
+          />
         </div>
 
         <div className="action-container">
