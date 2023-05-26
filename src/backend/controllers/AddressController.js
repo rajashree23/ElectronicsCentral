@@ -87,8 +87,10 @@ export const removeAddressHandler = function (schema, request) {
     }
     let userAddresses = schema.users.findBy({ _id: userId }).address;
     const addressId = request.params.addressId;
+    console.log(addressId)
     userAddresses = userAddresses.filter((item) => item._id !== addressId);
     this.db.users.update({ _id: userId }, { address: userAddresses });
+    console.log(this.db.users)
     return new Response(200, {}, { address: userAddresses });
   } catch (error) {
     return new Response(

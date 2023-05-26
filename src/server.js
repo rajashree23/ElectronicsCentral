@@ -1,4 +1,6 @@
 import { Server, Model, RestSerializer } from "miragejs";
+import { v4 as uuid } from "uuid";
+
 import {
   addNewAddressHandler,
   getAllAddressesHandler,
@@ -31,8 +33,10 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { formatDate } from "./backend/utils/authUtils";
 
 export function makeServer({ environment = "development" } = {}) {
+  console.log("serer")
   return new Server({
     serializers: {
       application: RestSerializer,
@@ -56,7 +60,41 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", {
+          ...item,
+          cart: [],
+          wishlist: [],
+          address: [
+            {
+              _id: uuid(),
+              address: {
+                name: "Rajashree Parhi",
+                street: "67, Garfa main road",
+                city: "Kolkata",
+                state: "West Bengal",
+                country: "India",
+                zipCode: "700078",
+                mobile: "123456789",
+              },
+              createdAt: formatDate(),
+              updatedAt: formatDate(),
+            },
+            {
+              _id: uuid(),
+              address: {
+                name: "Rajashree Parhi",
+                street: "302, PYG Residency",
+                city: "Hyderabad",
+                state: "Telangana",
+                country: "India",
+                zipCode: "500084",
+                mobile: "987654321",
+              },
+              createdAt: formatDate(),
+              updatedAt: formatDate(),
+            },
+          ],
+        })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));

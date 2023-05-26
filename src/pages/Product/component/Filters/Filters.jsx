@@ -3,8 +3,7 @@ import { useDataContext } from "../../../../context/data/DataContext";
 import { ACTION_TYPES } from "../../../../utils/actionTypeConstants";
 import { RATINGS, SORTING } from "../../../../utils/filtersOptions";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "../../product.mobile.layout.css";
 
 export const Filters = () => {
   const { categories, filters, dataDispatch } = useDataContext();

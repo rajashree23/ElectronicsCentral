@@ -1,0 +1,29 @@
+.user-profile{
+    MARGIN: 2rem AUTO;
+    /* width: 25vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.nav{
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.nav li{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab-content{
+    box-shadow: 0 1px 10px 2px #cac7c7;
+ 
+}

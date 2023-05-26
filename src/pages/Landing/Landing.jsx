@@ -5,15 +5,15 @@ import { Footer } from "./component/Footer/Footer";
 
 import { useDataContext } from "../../context/data/DataContext";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "./landing.mobile.layout.css";
+import "./landing.desktop.layout.css";
 
 
 export const Landing = () => {
   const { categories } = useDataContext();
 
   return (
-    <>
+    <div>
       <div className="hero-container">
         <div className="hero-image-container"></div>
         <div className="description">
@@ -38,6 +38,6 @@ export const Landing = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };

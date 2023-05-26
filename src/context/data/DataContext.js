@@ -23,7 +23,11 @@ export const DataContextProvider = ({ children }) => {
         categories: state.categories,
         products: state.products,
         dataDispatch: dispatch,
-        filters: state.filters
+        filters: state.filters,
+        cart: state.cart,
+        wishlist: state.wishlist,
+        address: state.address,
+        deliveryAddress:state.deliveryAddress
       }}
     >
       {children}
