@@ -15,15 +15,14 @@ import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 
 import Logo from "../../assets/Logo.svg";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "./navbar.mobile.layout.css";
+import "./navbar.desktop.layout.css";
 import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
 
 export const Navbar = () => {
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
   const { filters, dataDispatch, cart, wishlist } = useDataContext();
   const { token, user } = useAuthContext();
-  // console.log(user)
   const navigate = useNavigate();
 
   const inputHandler = (e) => {
@@ -132,7 +131,7 @@ export const Navbar = () => {
               onClick={() => setHamburgerSelected((prev) => !prev)}
             >
               <FontAwesomeIcon icon={faUser} className="icon" />
-              <p>{JSON.parse(user).firstName}</p>
+              <p>{JSON.parse(user)?.firstName}</p>
             </div>
           </Link>
         ) : (

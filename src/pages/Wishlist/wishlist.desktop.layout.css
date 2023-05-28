@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+    .wishlist-container h1 {
+        font-size: var(--h1-desktop);
+    }
+
+    .empty-wishlist-details h2 {
+        font-size: var(--h2-desktop);
+    }
+
+    .empty-wishlist-details p {
+        font-size: var(--p-desktop);
+    }
+}

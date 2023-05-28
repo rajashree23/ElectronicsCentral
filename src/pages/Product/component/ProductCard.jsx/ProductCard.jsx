@@ -19,7 +19,7 @@ import "../../product.mobile.layout.css";
 import "../../product.desktop.layout.css";
 import { useAuthContext } from "../../../../context/AuthContext.js/AuthContext";
 import { addToCart } from "../../../../services/cart/cartService";
-import { addToWishlist } from "../../../../services/wishlist/wishlistService";
+import { addToWishlist, removeFromWishlist } from "../../../../services/wishlist/wishlistService";
 
 export const ProductCard = ({ product }) => {
   const { dataDispatch, cart, wishlist } = useDataContext();
@@ -28,7 +28,7 @@ export const ProductCard = ({ product }) => {
 
   const presentInCart = isPresentInCart(cart, product);
   const presentInWishlist = isPresentInWishlist(wishlist, product);
-  console.log(presentInWishlist);
+
   const addToCartHandler = (product) => {
     if (token) {
       addToCart(dataDispatch, product, token);
@@ -37,6 +37,13 @@ export const ProductCard = ({ product }) => {
     }
   };
 
+  const removeFromWishlistHandler = (productId) => {
+    if (token) {
+      removeFromWishlist(dataDispatch, productId, token);
+    } else {
+      navigate("/login");
+    }
+  };
   const addToWishlistHandler = (product) => {
     if (token) {
       addToWishlist(dataDispatch, product, token);
@@ -47,12 +54,19 @@ export const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <FontAwesomeIcon
-        onClick={() => addToWishlistHandler(product)}
-        disabled={presentInWishlist >= 0}
-        icon={faHeart}
-        className={`heart-icon ${presentInWishlist >= 0 && "wishlisted"}`}
-      />
+      {presentInWishlist >= 0 ? (
+        <FontAwesomeIcon
+          onClick={() => removeFromWishlistHandler(product._id)}
+          icon={faHeart}
+          className="heart-icon wishlisted"
+        />
+      ) : (
+        <FontAwesomeIcon
+          onClick={() => addToWishlistHandler(product)}
+          icon={faHeart}
+          className="heart-icon"
+        />
+      )}
 
       <img src={product.imgSrc} alt={product.productName} />
 
