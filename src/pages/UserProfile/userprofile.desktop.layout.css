@@ -1,0 +1,21 @@
+@media(min-width:1024px) {
+    .nav {
+        font-size: var(--p-desktop);
+    }
+
+    .user-profile h1 {
+        font-size: var(--h1-desktop);
+    }
+
+    .tab-content h2 {
+        font-size: var(--h2-desktop);
+    }
+
+    .address-form-container {
+        width: 50vw;
+    }
+
+    .address-form-container h2 {
+        font-size: var(--h2-desktop);
+    }
+}

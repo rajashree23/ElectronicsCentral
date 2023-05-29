@@ -1,0 +1,5 @@
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--p-mobile);
+}

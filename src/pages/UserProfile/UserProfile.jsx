@@ -4,7 +4,8 @@ import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
 import { Profile } from "./component/Profile";
 import { Address } from "./component/Address/Address";
 
-import "./mobile.layout.css";
+import "./userprofile.mobile.layout.css";
+import "./userprofile.desktop.layout.css";
 import { AddressForm } from "./component/AddressForm";
 
 export const UserProfile = () => {
@@ -27,20 +28,26 @@ export const UserProfile = () => {
     color: "white",
   });
 
-  const toggleShowAddressForm = (type,address) => {
+  const toggleShowAddressForm = (type, address, _id) => {
     setShowAddressForm((prev) => !prev);
-    setAddressForm(type==="edit"?address:{ name: "",
-    street: "",
-    city: "",
-    state: "",
-    country: "",
-    zipCode: "",
-    mobile: "",});
+    setAddressForm(
+      type === "edit"
+        ? { ...address, _id: _id }
+        : {
+            name: "",
+            street: "",
+            city: "",
+            state: "",
+            country: "",
+            zipCode: "",
+            mobile: "",
+          }
+    );
   };
-  
+
   const setAddressFormValues = (inputFieldType, e) =>
     setAddressForm((prev) => ({ ...prev, [inputFieldType]: e.target.value }));
-console.log(addressForm)
+
   return showAddressForm ? (
     <AddressForm
       toggleShowAddressForm={toggleShowAddressForm}

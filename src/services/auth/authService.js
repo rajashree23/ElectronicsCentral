@@ -29,7 +29,6 @@ export const loginUser= async (authDispatch, dataDispatch, user) => {
       data: { encodedToken, foundUser },
     } = await axios.post("api/auth/login", user);
     if (status === 200) {
-      console.log(authDispatch)
       authDispatch({ type: ACTION_TYPES.SET_JWT_TOKEN, payload: encodedToken });
       console.log(foundUser)
       authDispatch({ type: ACTION_TYPES.SET_USER, payload: foundUser });

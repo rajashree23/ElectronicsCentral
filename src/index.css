@@ -73,8 +73,24 @@ button {
 
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   cursor: text;
+}
+
+.input-fields {
+  padding: 0.5rem;
+  margin-top: -1rem;
+  font-size: var(--p-mobile);
+  border-radius: var(--border-xs);
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
+.label {
+  font-weight: var(--semi-bold);
+  font-size: var(--p-mobile);
 }
 
 .rating {

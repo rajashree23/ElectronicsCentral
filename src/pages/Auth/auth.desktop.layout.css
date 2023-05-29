@@ -1,0 +1,14 @@
+@media(min-width:1024px){
+    .auth-container{
+        width: 31vw;
+    }
+    .input-fields{
+        font-size: var(--p-desktop);
+    }
+    .label{
+        font-size: var(--p-desktop);
+    }
+    .new-acc{
+        font-size: var(--p-desktop);
+    }
+}

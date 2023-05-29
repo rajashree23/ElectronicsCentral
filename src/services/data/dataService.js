@@ -69,11 +69,38 @@ const removeAddress = async (dataDispatch, addressId, token) => {
       },
     });
     if (status === 200) {
-      console.log(address)
+      console.log(address);
       dataDispatch({ type: ACTION_TYPES.REMOVE_ADDRESS, payload: address });
     }
   } catch (error) {
     console.log(error);
   }
 };
-export { fetchCategories, fetchProducts, addAddress, removeAddress };
+const updateAddress = async (dataDispatch, addressForm, token) => {
+  try {
+    const {
+      status,
+      data: { address },
+    } = await axios.post(
+      `api/user/address/${addressForm._id}`,
+      { address: addressForm },
+      {
+        headers: {
+          authorization: token,
+        },
+      }
+    );
+    if (status === 200) {
+      dataDispatch({ type: ACTION_TYPES.UPDATE_ADDRESS, payload: address });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+export {
+  fetchCategories,
+  fetchProducts,
+  addAddress,
+  removeAddress,
+  updateAddress,
+};

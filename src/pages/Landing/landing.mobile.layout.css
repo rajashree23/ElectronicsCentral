@@ -47,7 +47,7 @@
 
 /* hero description button on hover */
 .hero-container .description .link:hover {
-  background-color: var(--hover-color);
+  background-color: var(--primary-button-hover-color);
   color: black
 }
 

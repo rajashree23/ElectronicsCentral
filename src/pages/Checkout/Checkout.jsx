@@ -1,29 +1,26 @@
 import { useDataContext } from "../../context/data/DataContext";
 import { Address } from "./component/Address";
-import { PriceCard } from "./component/PriceCard";
+import { PriceCard } from "../../component/PriceSummary/PriceCard";
+
+import "./checkout.mobile.layout.css";
+import "./checkout.desktop.layout.css";
 
 export const Checkout = () => {
   const { cart, address } = useDataContext();
 
-
   return (
-    <div className="cart-container">
+    <div className="checkout-page-container">
       <h1>Checkout</h1>
-      <div>
-        {address.length === 0 && <h2>No addresses added yet</h2>}
-        <div>
+
+      <div className="checkout-layout">
+        <div className="address-container">
           {address.map((add) => (
             <Address key={add._id} address={add} />
           ))}
         </div>
-      </div>
 
-      {cart.length > 0 && (
-        <div>
-          <h2>Price details</h2>
-          <PriceCard cart={cart} />
-        </div>
-      )}
+        {cart.length > 0 && <PriceCard cart={cart} type="checkout" />}
+      </div>
     </div>
   );
 };

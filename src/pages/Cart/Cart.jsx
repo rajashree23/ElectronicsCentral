@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDataContext } from "../../context/data/DataContext";
-import { PriceCard } from "./component/PriceCard";
+import { PriceCard } from "../../component/PriceSummary/PriceCard";
 
 import "./cart.mobile.layout.css";
 import "./cart.desktop.layout.css";
@@ -14,6 +14,7 @@ export const Cart = () => {
       <h1>
         My Cart<span>{cart.length ? `(${cart.length})` : null}</span>
       </h1>
+
       {cart.length === 0 && (
         <div className="empty-cart-details">
           <h2>Your cart is empty!</h2>
@@ -23,6 +24,7 @@ export const Cart = () => {
           </Link>
         </div>
       )}
+
       <div className="cart-layout">
         <div className="cart-products">
           {cart.map((product) => (
@@ -30,11 +32,8 @@ export const Cart = () => {
           ))}
         </div>
 
-        {cart.length > 0 && (
-          <div className="cart-price-container">
-            <h2 className="heading">PRICE DETAILS</h2>
-            <PriceCard cart={cart} />
-          </div>
+        {cart.length > 0 && ( 
+            <PriceCard cart={cart} />   
         )}
       </div>
     </div>

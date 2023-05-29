@@ -1,72 +1,101 @@
 import { useState } from "react";
 import { useDataContext } from "../../../context/data/DataContext";
-import { addAddress } from "../../../services/data/dataService";
+import { addAddress, updateAddress } from "../../../services/data/dataService";
 import { useAuthContext } from "../../../context/AuthContext.js/AuthContext";
 
-export const AddressForm = ({toggleShowAddressForm, addressForm, setAddressFormValues}) => {
+export const AddressForm = ({
+  toggleShowAddressForm,
+  addressForm,
+  setAddressFormValues,
+}) => {
   const { dataDispatch } = useDataContext();
   const { token } = useAuthContext();
 
-  const submitButtonHandler = () => {
-    addAddress(dataDispatch, addressForm, token);
+  const submitButtonHandler = (e) => {
+    e.preventDefault();
+    if (addressForm._id) {
+      updateAddress(dataDispatch, addressForm, token);
+    } else {
+      addAddress(dataDispatch, addressForm, token);
+    }
     toggleShowAddressForm();
   };
-
+  console.log(addressForm);
   return (
-    <div>
+    <div className="address-form-container">
       <h2>Add new address</h2>
-      <label>
+      <form className="address-form">
+        <label htmlFor="name" className="label" />
         <input
+          type="text"
+          className="input-fields"
+          id="name"
           placeholder="Enter Name"
           value={addressForm.name}
           onChange={(e) => setAddressFormValues("name", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="locality" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter House no, Road, Colony"
           value={addressForm.street}
           onChange={(e) => setAddressFormValues("street", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="city" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter City"
           value={addressForm.city}
           onChange={(e) => setAddressFormValues("city", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="state" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter State"
           value={addressForm.state}
           onChange={(e) => setAddressFormValues("state", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="country" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter Country"
           value={addressForm.country}
           onChange={(e) => setAddressFormValues("country", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="zipCode" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter Postal Code"
           value={addressForm.zipCode}
           onChange={(e) => setAddressFormValues("zipCode", e)}
         />
-      </label>
-      <label>
+
+        <label htmlFor="mobile" />
         <input
+          type="text"
+          className="input-fields"
           placeholder="Enter Mobile Number"
           value={addressForm.mobile}
           onChange={(e) => setAddressFormValues("mobile", e)}
         />
-      </label>
 
-      <button onClick={submitButtonHandler}>Save</button>
-      <button onClick={toggleShowAddressForm}>Cancel</button>
+        <button className="primary-button" onClick={submitButtonHandler}>
+          Save
+        </button>
+        <button className="secondary-button" onClick={toggleShowAddressForm}>
+          Cancel
+        </button>
+      </form>
     </div>
   );
 };

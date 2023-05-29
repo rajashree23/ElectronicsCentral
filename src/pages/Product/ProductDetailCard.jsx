@@ -73,7 +73,7 @@ export const ProductDetailCard = () => {
         </div>
 
         {presentInCart >= 0 ? (
-          <Link className="primary-button" to="/cart">
+          <Link className="primary-button cart-link" to="/cart">
             <FontAwesomeIcon icon={faShoppingCart} className="icon" />
             Go to Cart
           </Link>
@@ -85,7 +85,7 @@ export const ProductDetailCard = () => {
         )}
 
         {presentInWishlist >= 0 ? (
-          <Link className="primary-button" to="/wishlist">
+          <Link className="primary-button cart-link" to="/wishlist">
             <FontAwesomeIcon icon={faHeart} className="icon" />
             Added to Wishlist
           </Link>

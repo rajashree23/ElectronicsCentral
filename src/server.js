@@ -5,6 +5,7 @@ import {
   addNewAddressHandler,
   getAllAddressesHandler,
   removeAddressHandler,
+  updateAddressHandler,
 } from "./backend/controllers/AddressController";
 import {
   loginHandler,
@@ -137,6 +138,7 @@ export function makeServer({ environment = "development" } = {}) {
       // address routes (private)
       this.get("/user/addresses", getAllAddressesHandler.bind(this));
       this.post("/user/address", addNewAddressHandler.bind(this));
+      this.post("/user/address/:addressId", updateAddressHandler.bind(this));
       this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
     },
   });

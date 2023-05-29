@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { useDataContext } from "../../../../context/data/DataContext";
-import "../../mobile.layout.css";
+import "../../userprofile.mobile.layout.css";
 import { AddressCard } from "./AddressCard";
 
 export const Address = ({ toggleShowAddressForm }) => {
@@ -19,10 +19,10 @@ export const Address = ({ toggleShowAddressForm }) => {
             toggleShowAddressForm={toggleShowAddressForm}
           />
         ))}
-        <button onClick={toggleShowAddressForm}>
+        <p onClick={toggleShowAddressForm} className="add-new-addr">
           <FontAwesomeIcon icon={faPlus} />
           Add new address
-        </button>
+        </p>
       </section>
     </div>
   );

@@ -13,7 +13,7 @@ export const initialState = {
   cart: JSON.parse(localStorage.getItem("user"))?.cart ?? [],
   wishlist: JSON.parse(localStorage.getItem("user"))?.wishlist ?? [],
   address: JSON.parse(localStorage.getItem("user"))?.address ?? [],
-  deliveryAddress:null
+  deliveryAddress: null,
 };
 
 export const dataReducer = (state, action) => {
@@ -168,12 +168,16 @@ export const dataReducer = (state, action) => {
         ...state,
         address: action.payload,
       };
-      case ACTION_TYPES.SET_DELIVERY_ADDRESS:
+    case ACTION_TYPES.SET_DELIVERY_ADDRESS:
       return {
         ...state,
-        deliveryAddress:(action.payload)
-        
-      }
+        deliveryAddress: action.payload,
+      };
+    case ACTION_TYPES.UPDATE_ADDRESS:
+      return {
+        ...state,
+        address: action.payload,
+      };
     default:
       return state;
   }

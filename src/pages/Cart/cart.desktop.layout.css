@@ -15,10 +15,4 @@
         font-size: var(--p-desktop);
     }
 
-    .price-details{
-        font-size: var(--p-desktop);
-    }
-    .cart-price-container{
-        width: 27vw;
-    }
 }
