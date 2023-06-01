@@ -95,7 +95,7 @@ export const dataReducer = (state, action) => {
           sortBy: "",
           categories: [],
           rating: "",
-          priceRange: "50000",
+          priceRange: "100000",
           inputSearch: "",
         },
       };
