@@ -26,7 +26,7 @@ export const Filters = () => {
       <p className="filter-title">Price:</p>
       <div className="slider-value-container">
         <p>500</p>
-        <p>10000</p>
+        <p>100000</p>
         <p>200000</p>
       </div>
       <input

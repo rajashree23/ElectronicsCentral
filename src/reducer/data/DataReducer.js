@@ -7,7 +7,7 @@ export const initialState = {
     sortBy: "",
     categories: [],
     rating: "",
-    priceRange: "50000",
+    priceRange: "100000",
     inputSearch: "",
   },
   cart: JSON.parse(localStorage.getItem("user"))?.cart ?? [],
