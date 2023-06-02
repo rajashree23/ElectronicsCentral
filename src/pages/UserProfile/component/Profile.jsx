@@ -1,4 +1,4 @@
-import { useAuthContext } from "../../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../../context/auth/AuthContext";
 import { ACTION_TYPES } from "../../../utils/actionTypeConstants";
 
 import "../userprofile.mobile.layout.css";

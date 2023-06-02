@@ -36,7 +36,7 @@ const fetchProducts = async (dataDispatch) => {
   }
 };
 
-const addAddress = async (dataDispatch, addressForm, token) => {
+const addAddress = async (dataDispatch, addressForm, token, toast) => {
   try {
     const {
       status,
@@ -52,13 +52,15 @@ const addAddress = async (dataDispatch, addressForm, token) => {
     );
     if (status === 201) {
       dataDispatch({ type: ACTION_TYPES.ADD_ADDRESS, payload: address });
+      toast.success("Address added successfully !");
     }
   } catch (error) {
     console.log(error);
+    toast.error("Error in removing address !");
   }
 };
 
-const removeAddress = async (dataDispatch, addressId, token) => {
+const removeAddress = async (dataDispatch, addressId, token, toast) => {
   try {
     const {
       status,
@@ -69,14 +71,15 @@ const removeAddress = async (dataDispatch, addressId, token) => {
       },
     });
     if (status === 200) {
-      console.log(address);
       dataDispatch({ type: ACTION_TYPES.REMOVE_ADDRESS, payload: address });
+      toast.success("Address removed successfully !");
     }
   } catch (error) {
     console.log(error);
+    toast.error("Error in removing address !");
   }
 };
-const updateAddress = async (dataDispatch, addressForm, token) => {
+const updateAddress = async (dataDispatch, addressForm, token, toast) => {
   try {
     const {
       status,
@@ -92,9 +95,11 @@ const updateAddress = async (dataDispatch, addressForm, token) => {
     );
     if (status === 200) {
       dataDispatch({ type: ACTION_TYPES.UPDATE_ADDRESS, payload: address });
+      toast.success("Address updated successfully !");
     }
   } catch (error) {
     console.log(error);
+    toast.error("Error in updating address !");
   }
 };
 export {

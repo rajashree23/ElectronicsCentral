@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../context/auth/AuthContext";
 
 import { Profile } from "./component/Profile";
 import { Address } from "./component/Address/Address";

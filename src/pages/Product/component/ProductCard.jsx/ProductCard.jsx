@@ -5,7 +5,7 @@ import {
   faStar,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { toast } from 'react-toastify';
 import { useDataContext } from "../../../../context/data/DataContext";
 
 import {
@@ -17,7 +17,7 @@ import {
 
 import "../../product.mobile.layout.css";
 import "../../product.desktop.layout.css";
-import { useAuthContext } from "../../../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../../../context/auth/AuthContext";
 import { addToCart } from "../../../../services/cart/cartService";
 import { addToWishlist, removeFromWishlist } from "../../../../services/wishlist/wishlistService";
 
@@ -31,7 +31,7 @@ export const ProductCard = ({ product }) => {
 
   const addToCartHandler = (product) => {
     if (token) {
-      addToCart(dataDispatch, product, token);
+      addToCart(dataDispatch, product, token, toast);
     } else {
       navigate("/login");
     }
@@ -39,14 +39,14 @@ export const ProductCard = ({ product }) => {
 
   const removeFromWishlistHandler = (productId) => {
     if (token) {
-      removeFromWishlist(dataDispatch, productId, token);
+      removeFromWishlist(dataDispatch, productId, token, toast);
     } else {
       navigate("/login");
     }
   };
   const addToWishlistHandler = (product) => {
     if (token) {
-      addToWishlist(dataDispatch, product, token);
+      addToWishlist(dataDispatch, product, token, toast);
     } else {
       navigate("/login");
     }

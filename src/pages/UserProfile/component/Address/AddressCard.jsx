@@ -1,4 +1,6 @@
-import { useAuthContext } from "../../../../context/AuthContext.js/AuthContext";
+import { toast } from 'react-toastify';
+
+import { useAuthContext } from "../../../../context/auth/AuthContext";
 import { useDataContext } from "../../../../context/data/DataContext";
 import { removeAddress } from "../../../../services/data/dataService";
 
@@ -26,7 +28,7 @@ export const AddressCard = ({
         </button>
         <button
           className="secondary-button"
-          onClick={() => removeAddress(dataDispatch, _id, token)}
+          onClick={() => removeAddress(dataDispatch, _id, token, toast)}
         >
           Remove
         </button>

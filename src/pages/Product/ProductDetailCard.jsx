@@ -17,7 +17,7 @@ import {
   isPresentInCart,
   isPresentInWishlist,
 } from "../../utils/productUtils";
-import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../context/auth/AuthContext";
 import { addToCart } from "../../services/cart/cartService";
 import { addToWishlist } from "../../services/wishlist/wishlistService";
 

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { toast } from 'react-toastify';
 import { useDataContext } from "../../../context/data/DataContext";
 import { addAddress, updateAddress } from "../../../services/data/dataService";
-import { useAuthContext } from "../../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../../context/auth/AuthContext";
 
 export const AddressForm = ({
   toggleShowAddressForm,
@@ -14,9 +14,9 @@ export const AddressForm = ({
   const submitButtonHandler = (e) => {
     e.preventDefault();
     if (addressForm._id) {
-      updateAddress(dataDispatch, addressForm, token);
+      updateAddress(dataDispatch, addressForm, token, toast);
     } else {
-      addAddress(dataDispatch, addressForm, token);
+      addAddress(dataDispatch, addressForm, token, toast);
     }
     toggleShowAddressForm();
   };

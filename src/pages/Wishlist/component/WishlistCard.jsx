@@ -1,4 +1,4 @@
-import { useAuthContext } from "../../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../../context/auth/AuthContext";
 import { useDataContext } from "../../../context/data/DataContext";
 import { addToCart, removeFromCart, updateCart } from "../../../services/cart/cartService";
 import {

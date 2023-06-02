@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+
 import { signUpUser } from "../../services/auth/authService";
-import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../context/auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useDataContext } from "../../context/data/DataContext";
 
@@ -41,7 +43,7 @@ export const Signup = () => {
     e.preventDefault();
     const { email, password } = signUpForm;
     if (email && password) {
-      signUpUser(authDispatch, dataDispatch, signUpForm);
+      signUpUser(authDispatch, dataDispatch, signUpForm, toast);
     }
   };
 

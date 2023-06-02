@@ -3,6 +3,7 @@ import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 export const initialState = {
   categories: [],
   products: [],
+  loader: true,
   filters: {
     sortBy: "",
     categories: [],
@@ -28,6 +29,7 @@ export const dataReducer = (state, action) => {
       return {
         ...state,
         products: action.payload,
+        loader: false,
       };
 
     case ACTION_TYPES.CATEGORY:

@@ -37,7 +37,6 @@ import { users } from "./backend/db/users";
 import { formatDate } from "./backend/utils/authUtils";
 
 export function makeServer({ environment = "development" } = {}) {
-  console.log("serer")
   return new Server({
     serializers: {
       application: RestSerializer,

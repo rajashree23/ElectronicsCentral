@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 
-export const addToWishlist = async (dataDispatch, product, token) => {
+export const addToWishlist = async (dataDispatch, product, token, toast) => {
   try {
     const {
       status,
@@ -17,13 +17,14 @@ export const addToWishlist = async (dataDispatch, product, token) => {
     );
     if (status === 201) {
       dataDispatch({ type: ACTION_TYPES.ADD_TO_WISHLIST, payload: wishlist });
+      toast.success("Added to Wishlist !");
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-export const removeFromWishlist = async (dataDispatch, productId, token) => {
+export const removeFromWishlist = async (dataDispatch, productId, token, toast) => {
     try {
       const {
         status,
@@ -35,6 +36,7 @@ export const removeFromWishlist = async (dataDispatch, productId, token) => {
       });
       if (status === 200) {
         dataDispatch({ type: ACTION_TYPES.REMOVE_FROM_WISHLIST, payload: wishlist });
+        toast.warning("Removed from wishlist !");
       }
     } catch (error) {
       console.log(error);

@@ -17,7 +17,7 @@ import Logo from "../../assets/Logo.svg";
 
 import "./navbar.mobile.layout.css";
 import "./navbar.desktop.layout.css";
-import { useAuthContext } from "../../context/AuthContext.js/AuthContext";
+import { useAuthContext } from "../../context/auth/AuthContext";
 
 export const Navbar = () => {
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
