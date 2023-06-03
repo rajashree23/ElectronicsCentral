@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { toast, ToastContainer } from 'react-toastify';
 
 import { dataReducer, initialState } from "../../reducer/data/DataReducer";
 
@@ -34,7 +33,6 @@ export const DataContextProvider = ({ children }) => {
         wishlist: state.wishlist,
         address: state.address,
         deliveryAddress: state.deliveryAddress,
-        toast: toast,
         orderSummary: state.orderSummary
       }}
     >
