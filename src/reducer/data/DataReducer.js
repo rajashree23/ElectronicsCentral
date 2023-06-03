@@ -15,6 +15,11 @@ export const initialState = {
   wishlist: JSON.parse(localStorage.getItem("user"))?.wishlist ?? [],
   address: JSON.parse(localStorage.getItem("user"))?.address ?? [],
   deliveryAddress: null,
+  orderSummary: {
+    price: {},
+    items: [],
+    address: {},
+  },
 };
 
 export const dataReducer = (state, action) => {
@@ -179,6 +184,30 @@ export const dataReducer = (state, action) => {
       return {
         ...state,
         address: action.payload,
+      };
+    case ACTION_TYPES.SET_ORDER_SUMMARY_PRICE:
+      return {
+        ...state,
+        orderSummary: {
+          ...state.orderSummary,
+          price: action.payload,
+        },
+      };
+    case ACTION_TYPES.SET_ORDER_SUMMARY_ITEMS:
+      return {
+        ...state,
+        orderSummary: {
+          ...state.orderSummary,
+          items: action.payload,
+        },
+      };
+    case ACTION_TYPES.SET_ORDER_SUMMARY_ADDRESS:
+      return {
+        ...state,
+        orderSummary: {
+          ...state.orderSummary,
+          address: action.payload,
+        },
       };
     default:
       return state;

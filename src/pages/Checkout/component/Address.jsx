@@ -7,7 +7,7 @@ export const Address = ({ address }) => {
   return (
     <div className="address-card">
       <input
-        id="address"
+        id={address._id}
         value={deliveryAddress?._id}
         type="radio"
         checked={address._id === deliveryAddress?._id}
@@ -26,7 +26,7 @@ export const Address = ({ address }) => {
           })
         }
       />
-      <label htmlFor="address">
+      <label htmlFor={address._id}>
         <div>
           <h3>{address.address.name}</h3>
           <p>

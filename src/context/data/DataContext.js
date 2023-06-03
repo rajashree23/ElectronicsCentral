@@ -34,7 +34,8 @@ export const DataContextProvider = ({ children }) => {
         wishlist: state.wishlist,
         address: state.address,
         deliveryAddress: state.deliveryAddress,
-        toast: toast
+        toast: toast,
+        orderSummary: state.orderSummary
       }}
     >
       {children}

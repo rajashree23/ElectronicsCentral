@@ -33,7 +33,7 @@ export const Cart = () => {
         </div>
 
         {cart.length > 0 && ( 
-            <PriceCard cart={cart} />   
+            <PriceCard/>   
         )}
       </div>
     </div>

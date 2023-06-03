@@ -15,6 +15,7 @@ import { Login } from "./pages/Auth/Login";
 import { RequiresAuth } from "./component/RequiresAuth/RequiresAuth";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
 import { Checkout } from "./pages/Checkout/Checkout";
+import { OrderSummary } from "./pages/OrderSummary/OrderSummary";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/order-summary" element={<OrderSummary />} />
       </Routes>
     </>
   );

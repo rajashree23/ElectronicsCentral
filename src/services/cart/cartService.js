@@ -80,13 +80,16 @@ export const removeFromCart = async (dataDispatch, productId, token, toast) => {
 export const removeAllFromCart = async (dataDispatch, cart, token) => {
   let promiseArr = [];
   try {
-    cart.forEach((item) => {
-      const deletedItem = axios.delete(`/api/user/cart/${item._id}`, null, {
+    cart.forEach(async (item) => {
+      const {
+        status,
+        data: { cart },
+      } = await axios.delete(`/api/user/cart/${item._id}`, {
         headers: {
           authorization: token,
         },
       });
-      promiseArr = [...promiseArr, deletedItem];
+      if (status === 200) promiseArr = [...promiseArr, cart];
     });
     Promise.all(promiseArr).then(() =>
       dataDispatch({ type: ACTION_TYPES.CLEAR_CART })
