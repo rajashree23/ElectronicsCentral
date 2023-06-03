@@ -89,7 +89,6 @@ export const removeAddressHandler = function (schema, request) {
     const addressId = request.params.addressId;
     userAddresses = userAddresses.filter((item) => item._id !== addressId);
     this.db.users.update({ _id: userId }, { address: userAddresses });
-    console.log(this.db.users);
     return new Response(200, {}, { address: userAddresses });
   } catch (error) {
     return new Response(

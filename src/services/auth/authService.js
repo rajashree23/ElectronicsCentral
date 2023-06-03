@@ -25,7 +25,6 @@ export const signUpUser = async (authDispatch, dataDispatch, user, toast) => {
 
 
 export const loginUser= async (authDispatch, dataDispatch, user, toast) => {
-  console.log(user)
   try {
     const {
       status,
@@ -33,7 +32,6 @@ export const loginUser= async (authDispatch, dataDispatch, user, toast) => {
     } = await axios.post("api/auth/login", user);
     if (status === 200) {
       authDispatch({ type: ACTION_TYPES.SET_JWT_TOKEN, payload: encodedToken });
-      console.log(foundUser)
       authDispatch({ type: ACTION_TYPES.SET_USER, payload: foundUser });
 
       dataDispatch({type:ACTION_TYPES.INITIALISE_CART, payload: foundUser.cart})

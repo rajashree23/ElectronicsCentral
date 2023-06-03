@@ -20,7 +20,7 @@ export const AddressForm = ({
     }
     toggleShowAddressForm();
   };
-  console.log(addressForm);
+
   return (
     <div className="address-form-container">
       <h2>Add new address</h2>

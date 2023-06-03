@@ -24,7 +24,6 @@ export const ProductCard = ({ product, type }) => {
   const presentInCart = isPresentInCart(cart, product);
   const presentInWishlist=isPresentInWishlist(wishlist, product);
 
-  console.log(presentInCart);
   return (
     <div className="common-product-card">
       <img src={product.imgSrc} alt={product.productName} width={300}></img>

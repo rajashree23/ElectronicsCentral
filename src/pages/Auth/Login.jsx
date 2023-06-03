@@ -49,7 +49,6 @@ export const Login = () => {
         email: "rajashreeparhi23@gmail.com",
         password: "1234",
       }));
-      console.log(loginForm);
       loginUser(
         authDispatch,
         dataDispatch,

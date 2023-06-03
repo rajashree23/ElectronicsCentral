@@ -31,7 +31,6 @@ export const updateCart = async (
   token,
   toast
 ) => {
-  console.log(productId)
   try {
     const {
       status,
@@ -50,7 +49,6 @@ export const updateCart = async (
       }
     );
     if (status === 200) {
-      console.log(cart)
       dataDispatch({ type: ACTION_TYPES.UPDATE_CART, payload: cart });
       toast.success("Updated Cart !");
     }
