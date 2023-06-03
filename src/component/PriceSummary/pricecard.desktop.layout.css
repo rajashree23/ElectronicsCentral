@@ -1,0 +1,10 @@
+@media (min-width: 1024px) {
+    .checkout-price-container {
+        width: 50vw;
+    }
+
+    .price-details {
+        font-size: var(--p-desktop);
+    }
+
+}

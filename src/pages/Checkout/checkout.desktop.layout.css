@@ -1,0 +1,9 @@
+@media(min-width:1024px) {
+    .checkout-page-container h1{
+        font-size: var(--h1-desktop);
+    }
+    .checkout-layout{
+        flex-direction: row;
+    }
+  
+}

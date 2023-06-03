@@ -1,4 +1,4 @@
-@media(min-width:768px) {
+@media(min-width:1024px) {
 
     /* product main layout */
     .product-container {
@@ -10,6 +10,22 @@
         flex-direction: row;
     }
 
+    /* product card */
+    .product-card {
+        width: 23vw;
+    }
+
+    .price-container {
+        font-size: var(--p-desktop);
+    }
+
+    .primary-button {
+        font-size: var(--p-desktop)
+    }
+
+    .product-card .heart-icon {
+        font-size: var(--p-desktop);
+    }
 
     /* Product detail card */
     .product-detail-card {
@@ -22,9 +38,9 @@
 
     }
 
-    .product-detail-card .description{
+    .product-detail-card .description {
         font-size: var(--p-desktop);
     }
-    
+
 
 }

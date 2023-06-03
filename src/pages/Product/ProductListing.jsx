@@ -8,8 +8,8 @@ import {
 
 import { ProductCard } from "./component/ProductCard.jsx/ProductCard";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "./product.mobile.layout.css";
+import "./product.desktop.layout.css";
 
 export const ProductListing = () => {
   const { filters, products } = useDataContext();

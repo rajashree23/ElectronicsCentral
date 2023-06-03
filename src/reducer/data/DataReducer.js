@@ -2,15 +2,19 @@ import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 
 export const initialState = {
   categories: [],
-  selectedCategory: "",
   products: [],
+  loader: true,
   filters: {
     sortBy: "",
     categories: [],
     rating: "",
-    priceRange: "50000",
+    priceRange: "100000",
     inputSearch: "",
   },
+  cart: JSON.parse(localStorage.getItem("user"))?.cart ?? [],
+  wishlist: JSON.parse(localStorage.getItem("user"))?.wishlist ?? [],
+  address: JSON.parse(localStorage.getItem("user"))?.address ?? [],
+  deliveryAddress: null,
 };
 
 export const dataReducer = (state, action) => {
@@ -25,6 +29,7 @@ export const dataReducer = (state, action) => {
       return {
         ...state,
         products: action.payload,
+        loader: false,
       };
 
     case ACTION_TYPES.CATEGORY:
@@ -92,9 +97,88 @@ export const dataReducer = (state, action) => {
           sortBy: "",
           categories: [],
           rating: "",
-          priceRange: "50000",
+          priceRange: "100000",
           inputSearch: "",
         },
+      };
+
+    case ACTION_TYPES.INITIALISE_CART:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+
+    case ACTION_TYPES.INITIALISE_WISHLIST:
+      return {
+        ...state,
+        wishlist: action.payload,
+      };
+
+    case ACTION_TYPES.ADD_TO_CART:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+    case ACTION_TYPES.UPDATE_CART:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+    case ACTION_TYPES.REMOVE_ITEM:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+    case ACTION_TYPES.CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
+
+    case ACTION_TYPES.ADD_TO_WISHLIST:
+      return {
+        ...state,
+        wishlist: action.payload,
+      };
+    case ACTION_TYPES.REMOVE_FROM_WISHLIST:
+      return {
+        ...state,
+        wishlist: action.payload,
+      };
+
+    case ACTION_TYPES.INITIALISE_ADDRESS:
+      return {
+        ...state,
+        address: action.payload,
+      };
+    case ACTION_TYPES.LOG_OUT:
+      return {
+        ...state,
+        address: [],
+        cart: [],
+        wishlist: [],
+      };
+
+    case ACTION_TYPES.ADD_ADDRESS:
+      return {
+        ...state,
+        address: action.payload,
+      };
+
+    case ACTION_TYPES.REMOVE_ADDRESS:
+      return {
+        ...state,
+        address: action.payload,
+      };
+    case ACTION_TYPES.SET_DELIVERY_ADDRESS:
+      return {
+        ...state,
+        deliveryAddress: action.payload,
+      };
+    case ACTION_TYPES.UPDATE_ADDRESS:
+      return {
+        ...state,
+        address: action.payload,
       };
     default:
       return state;

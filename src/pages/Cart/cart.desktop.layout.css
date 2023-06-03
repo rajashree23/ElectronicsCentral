@@ -1,0 +1,18 @@
+@media (min-width: 1024px) {
+    .cart-layout{
+        flex-direction: row;
+    }
+
+    .cart-container h1 {
+        font-size: var(--h1-desktop);
+    }
+
+    .empty-cart-details h2 {
+        font-size: var(--h2-desktop);
+    }
+
+    .empty-cart-details p {
+        font-size: var(--p-desktop);
+    }
+
+}

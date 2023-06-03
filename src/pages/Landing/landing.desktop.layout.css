@@ -2,7 +2,7 @@
 
   /* hero description */
   .hero-container .description {
-    top: 9rem;
+    top: 14rem;
     left: 11rem;
   }
 
@@ -24,5 +24,21 @@
   /* category */
   .categories-container .category {
     flex-direction: row;
+  }
+
+
+  /* product category */
+  .product-category {
+    width: 21vw;
+    height: 21vw;
+  }
+
+  /* product category p */
+  .product-category p {
+    font-size: var(--p-desktop);
+  }
+
+  .footer-container .description {
+    font-size: var(--p-desktop);
   }
 }

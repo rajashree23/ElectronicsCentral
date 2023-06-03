@@ -1,0 +1,12 @@
+@media(min-width:1024px){
+    .common-product-card {
+        width: 50vw;
+        grid-template-columns: 50% 50%;
+    }
+    .common-product-card .quantity-button {
+        font-size: var(--p-desktop);
+    }
+    .common-product-card .quanity-number {
+        font-size: var(--p-desktop);
+    }
+}

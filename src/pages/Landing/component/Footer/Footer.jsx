@@ -1,6 +1,3 @@
-import "./mobile.layout.css";
-import "./desktop.layout.css";
-
 export const Footer = () => {
   return (
     <footer className="footer-container">

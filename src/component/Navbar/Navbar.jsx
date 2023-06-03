@@ -15,12 +15,14 @@ import { ACTION_TYPES } from "../../utils/actionTypeConstants";
 
 import Logo from "../../assets/Logo.svg";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "./navbar.mobile.layout.css";
+import "./navbar.desktop.layout.css";
+import { useAuthContext } from "../../context/auth/AuthContext";
 
 export const Navbar = () => {
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
-  const { filters, dataDispatch } = useDataContext();
+  const { filters, dataDispatch, cart, wishlist } = useDataContext();
+  const { token, user } = useAuthContext();
   const navigate = useNavigate();
 
   const inputHandler = (e) => {
@@ -30,6 +32,7 @@ export const Navbar = () => {
     });
     navigate("/products");
   };
+
   return (
     <>
       <nav className="nav-container">
@@ -42,6 +45,7 @@ export const Navbar = () => {
         <div className="input-container">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <input
+            type="text"
             value={filters.inputSearch}
             placeholder="Search"
             onChange={inputHandler}
@@ -50,14 +54,30 @@ export const Navbar = () => {
 
         <div className="action-container">
           <Link to="/cart">
+            {cart.length > 0 && (
+              <div className="item-count">
+                <p>{cart.length}</p>
+              </div>
+            )}
             <FontAwesomeIcon icon={faShoppingCart} className="icon" />
           </Link>
           <Link to="/wishlist">
+            {wishlist.length > 0 && (
+              <div className="item-count wishlist-count">
+                <p>{wishlist.length}</p>
+              </div>
+            )}
             <FontAwesomeIcon icon={faHeart} className="icon" />
           </Link>
-          <Link to="/login" className="link">
-            Login
-          </Link>
+          {token ? (
+            <Link to="/user-profile">
+              <FontAwesomeIcon icon={faUser} className="icon" />
+            </Link>
+          ) : (
+            <Link to="/login" className="link">
+              Login
+            </Link>
+          )}
         </div>
       </nav>
 
@@ -104,15 +124,27 @@ export const Navbar = () => {
             <p>Wishlist</p>
           </div>
         </Link>
-        <Link to="/login" className="link">
-          <div
-            className="nav-items"
-            onClick={() => setHamburgerSelected((prev) => !prev)}
-          >
-            <FontAwesomeIcon icon={faUser} className="icon" />
-            Login
-          </div>
-        </Link>
+        {token ? (
+          <Link to="/user-profile" className="link">
+            <div
+              className="nav-items"
+              onClick={() => setHamburgerSelected((prev) => !prev)}
+            >
+              <FontAwesomeIcon icon={faUser} className="icon" />
+              <p>{JSON.parse(user)?.firstName}</p>
+            </div>
+          </Link>
+        ) : (
+          <Link to="/login" className="link">
+            <div
+              className="nav-items"
+              onClick={() => setHamburgerSelected((prev) => !prev)}
+            >
+              <FontAwesomeIcon icon={faUser} className="icon" />
+              Login
+            </div>
+          </Link>
+        )}
       </div>
     </>
   );

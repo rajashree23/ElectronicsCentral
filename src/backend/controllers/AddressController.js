@@ -47,7 +47,7 @@ export const addNewAddressHandler = function (schema, request) {
     }
     const userAddresses = schema.users.findBy({ _id: userId }).address;
     const { address } = JSON.parse(request.requestBody);
-   
+
     userAddresses.push({
       address,
       createdAt: formatDate(),
@@ -89,7 +89,63 @@ export const removeAddressHandler = function (schema, request) {
     const addressId = request.params.addressId;
     userAddresses = userAddresses.filter((item) => item._id !== addressId);
     this.db.users.update({ _id: userId }, { address: userAddresses });
+    console.log(this.db.users);
     return new Response(200, {}, { address: userAddresses });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+
+export const updateAddressHandler = function (schema, request) {
+  const userId = requiresAuth.call(this, request);
+  const addressId = request.params.addressId;
+
+  try {
+    if (!userId) {
+      return new Response(
+        404,
+        {},
+        {
+          errors: ["The email you entered is not Registered. Not Found error"],
+        }
+      );
+    }
+    const userAddress = schema.users.findBy({
+      _id: userId,
+    }).address;
+
+    const {
+      address: { name, street, city, state, country, zipCode, mobile },
+    } = JSON.parse(request.requestBody);
+
+    userAddress.forEach((address) => {
+      if (address._id === addressId) {
+        address.address.name = name;
+        address.address.street = street;
+        address.address.city = city;
+        address.address.state = state;
+        address.address.country = country;
+        address.address.zipCode = zipCode;
+        address.address.mobile = mobile;
+        address.updatedAt = formatDate();
+      }
+    });
+
+    this.db.users.update(
+      {
+        _id: userId,
+      },
+      {
+        address: userAddress,
+      }
+    );
+    return new Response(200, {}, { address: userAddress });
   } catch (error) {
     return new Response(
       500,

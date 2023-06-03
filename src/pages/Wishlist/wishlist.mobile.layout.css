@@ -1,0 +1,32 @@
+.wishlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.empty-wishlist-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+.empty-wishlist-details h2 {
+    font-size: var(--h2-mobile);
+}
+
+.empty-wishlist-details p {
+    font-size: var(--p-mobile);
+}
+
+.wishlisted-products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0;
+
+}

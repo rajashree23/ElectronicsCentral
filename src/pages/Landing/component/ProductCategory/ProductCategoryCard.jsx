@@ -4,8 +4,6 @@ import { useDataContext } from "../../../../context/data/DataContext";
 
 import { ACTION_TYPES } from "../../../../utils/actionTypeConstants";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
 
 export const ProductCategoryCard = ({ category }) => {
   const { dataDispatch } = useDataContext();

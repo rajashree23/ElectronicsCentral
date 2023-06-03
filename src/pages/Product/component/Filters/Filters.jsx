@@ -3,8 +3,7 @@ import { useDataContext } from "../../../../context/data/DataContext";
 import { ACTION_TYPES } from "../../../../utils/actionTypeConstants";
 import { RATINGS, SORTING } from "../../../../utils/filtersOptions";
 
-import "./mobile.layout.css";
-import "./desktop.layout.css";
+import "../../product.mobile.layout.css";
 
 export const Filters = () => {
   const { categories, filters, dataDispatch } = useDataContext();
@@ -27,7 +26,7 @@ export const Filters = () => {
       <p className="filter-title">Price:</p>
       <div className="slider-value-container">
         <p>500</p>
-        <p>10000</p>
+        <p>100000</p>
         <p>200000</p>
       </div>
       <input
