@@ -95,7 +95,7 @@ export const PriceCard = ({ type }) => {
       </div>
       <>
       {type == "checkout" && deliveryAddress == null && (
-        <p>Please choose a delievry address from the left side panel!</p>
+        <p>Please choose a delivery address from the left side panel!</p>
       )}
         {type == "checkout" && deliveryAddress !== null && (
           <div className="delivery-address">
