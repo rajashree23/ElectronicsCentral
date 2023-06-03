@@ -7,7 +7,35 @@ https://electronics-central.netlify.app/
 
 ```
 git clone https://github.com/arjunrajput18/speedyBuyWeb.git
-cd ElectrnicsCentral
+cd ElectronicsCentral
 npm install
 npm start
 ```
+
+### Features
+- Home Page
+- Product Listing Page
+- Single Product Page
+- Filters by
+  - Price
+  - Category
+  - Ratings
+- Wishlist Management
+- Cart Management
+- Search
+- Loading & Alerts
+- Authentication
+- Sign-up
+- Login
+- Logout
+- Address Management
+- Checkout
+
+### Built with
+- ReactJS
+- React: useContext and useReducer
+- React Router v6
+- Vanilla CSS
+- MockBee for backend
+
+### Demo Video
