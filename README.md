@@ -1,4 +1,5 @@
-## Electronics Central
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center" ><img src="./src/assets/Logo.svg" alt="Electronics Central" ><h1>Electronics Central<h1></div>
+
 
 ### Live project
 https://electronics-central.netlify.app/
