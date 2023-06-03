@@ -10,7 +10,7 @@ export const OrderSummary = () => {
 
       <div className="order-layout">
         <h2>Order confirmed</h2>
-        <p>Total Amount: {orderSummary.price.totalAmount}</p>
+        <p>Total Amount: INR {orderSummary.price.totalAmount}</p>
         <p>Order will be delivered to</p>
         <div>
           <h3>{orderSummary.address.name}</h3>
