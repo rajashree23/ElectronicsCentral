@@ -32,6 +32,9 @@ npm start
 - Address Management
 - Checkout
 
+### Logo
+Created by me on Canva
+  
 ### Built with
 - ReactJS
 - React: useContext and useReducer
