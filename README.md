@@ -7,7 +7,7 @@ https://electronics-central.netlify.app/
 ### How to install and run locally?
 
 ```
-git clone https://github.com/arjunrajput18/speedyBuyWeb.git
+git clone https://github.com/rajashree23/ElectronicsCentral.git
 cd ElectronicsCentral
 npm install
 npm start
